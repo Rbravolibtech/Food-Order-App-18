@@ -25,7 +25,7 @@ export default function Checkout() {
 		error,
 		sendRequest,
 		clearData,
-	} = useHttp("http://localhost:3000/orderssss", requestConfig);
+	} = useHttp("http://localhost:3000/orders", requestConfig);
 
 	const cartTotal = cartCtx.items.reduce(
 		(totalPrice, item) => totalPrice + item.quantity * item.price,
@@ -102,9 +102,7 @@ export default function Checkout() {
 					<Input label=" POSTAL CODE" type="text" id="POSTAL-CODE" />
 					<Input label=" city" type="text" id="city" />
 				</div>
-
 				{error && <Error title="FAILED TO SUBMIT ORDER" message={error} />}
-
 				<p className="modal-actions">{actions}</p>
 			</form>
 		</Modal>
